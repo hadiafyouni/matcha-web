@@ -1,0 +1,139 @@
+.header {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    background: #1e293b;
+}
+
+.nav {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logo {
+    color: white;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.wave {
+    position: absolute;
+    left: -25%;
+    width: 150%;
+    border-radius: 45% 55% 50% 50%;
+}
+
+.wave1 {
+    bottom: -25px;
+    height: 90px;
+    background: rgba(56, 189, 248, 0.35);
+    animation: waveMove1 6s ease-in-out infinite;
+    z-index: 1;
+}
+
+.wave2 {
+    bottom: -35px;
+    height: 115px;
+    background: rgba(99, 102, 241, 0.28);
+    animation: waveMove2 9s ease-in-out infinite;
+    z-index: 2;
+}
+
+@keyframes waveMove1 {
+    0% {
+        transform: translateX(0);
+        border-radius: 45% 55% 50% 50%;
+    }
+
+    25% {
+        transform: translateY(30%);
+        border-radius: 35% 65% 50% 40%;
+    }
+
+    50% {
+        transform: translateX(-10%);
+        border-radius: 55% 80% 60% 30%;
+    }
+
+    75% {
+        transform: translateY(20%);
+        border-radius: 65% 45% 50% 20%;
+    }
+
+    100% {
+        transform: translateX(0);
+        border-radius: 45% 55% 50% 50%;
+    }
+}
+
+@keyframes waveMove2 {
+    0% {
+        transform: translateX(0);
+        border-radius: 80% 40% 55% 85%;
+    }
+
+    25% {
+        transform: translateY(-15%);
+        border-radius: 60% 55% 50% 20%;
+    }
+
+
+    50% {
+        transform: translateX(0);
+        border-radius: 40% 60% 45% 55%;
+    }
+
+    75% {
+        transform: translateY(-10%);
+        border-radius: 55% 80% 50% 30%;
+    }
+
+
+    100% {
+        transform: translateX(0);
+        border-radius: 80% 40% 55% 85%;
+    }
+}
+
+.bars-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+
+    cursor: pointer;
+}
+
+.bars {
+    font-size: 30px;
+    transition: transform 0.3s ease;
+}
+
+.bars.rotate {
+    transform: rotate(90deg);
+}
+
+
+.signin-buttons {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
