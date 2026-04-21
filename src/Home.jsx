@@ -1,55 +1,46 @@
 import "./Home.css";
+import WelcomeSection from "./WelcomeSection";
+import GeneralInfo from "./GeneralInfo";
+import ProductCard from "./ProductCard";
+import img1 from "./assets/IMG_4549.png";
+import img2 from "./assets/IMG_4605.png";
+import img3 from "./assets/IMG_4606.png";
+import img4 from "./assets/IMG_4607.png";
 
 export default function Home() {
     return (
         <div className="home">
-            <div className="welcome-section">
-                <h2>Welcome to MATCHA HORIKKU</h2>
-                <p>A place where everything tastes green</p>
-                <button>Shop Now</button>
-            </div>
-            <div className="general-info">
-                <div className="info-card">
-                    <h3>Sustained Energy</h3>
-                    <p>
-                        Unlike the jittery "spike and crash" of coffee,
-                        matcha contains L-theanine, an amino acid that
-                        slows the absorption of caffeine. This results in a calm,
-                        focused alertness that typically lasts 4 to 6 hours
-                        without the mid-afternoon slump.
-                    </p>
-                </div>
-                <div className="info-card">
-                    <h3>High Antioxidant Density</h3>
-                    <p>
-                        Matcha is a powerhouse of catechins, specifically
-                        EGCG (epigallocatechin gallate). Because you consume
-                        the entire leaf rather than just the brewed water,
-                        you get up to 10 times the antioxidants found in regular green tea,
-                        helping to combat oxidative stress.
-                    </p>
-                </div>
-                <div className="info-card">
-                    <h3>Metabolic Support</h3>
-                    <p>
-                        Matcha is often used to naturally support weight management.
-                        It has been shown to increase the body's rate of thermogenesis the rate
-                        at which your body burns calories making it a clean addition to a healthy lifestyle.
-                    </p>
-                </div>
-
-            </div>
+            <WelcomeSection />
+            <GeneralInfo />
 
             <div className="RecommendedProducts">
-                <h2></h2>
-                <div className="products">
-                    <div className="product-card">
-                        <img src="" alt="" />
-                        <h3></h3>
-                        <p></p>
-                    </div>
+                <h2>Our Top Products</h2>
+                <div className="products-grid">
+                    <ProductCard 
+                        image={img1} 
+                        name="Matcha Ceremonial Grade" 
+                        price="$29.99" 
+                        description="Premium ceremonial grade for an authentic matcha experience."
+                    />
+                    <ProductCard 
+                        image={img2} 
+                        name="Culinary Matcha" 
+                        price="$19.99" 
+                        description="Perfect for baking and making delicious matcha lattes."
+                    />
+                    <ProductCard 
+                        image={img3} 
+                        name="Matcha Whisk Set" 
+                        price="$24.99" 
+                        description="Authentic bamboo whisk and scoop for the perfect froth."
+                    />
+                    <ProductCard 
+                        image={img4} 
+                        name="Matcha Starter Kit" 
+                        price="$45.00" 
+                        description="Everything you need to begin your matcha journey."
+                    />
                 </div>
-
             </div>
         </div>
     )

@@ -1,0 +1,63 @@
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.welcome-section::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 2px;
+    background: #ccc;
+    margin-top: 20px;
+}
+
+.welcome-section h2 {
+    margin-bottom: 0;
+}
+
+.welcome-section p {
+    margin: 5px 0 5px 0;
+}
+
+.welcome-section button {
+    border: none;
+    border-radius: 30px;
+    background-color: #c2eaba;
+    padding: 11px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.welcome-section button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(at 0% 0%, rgba(6, 255, 27, 0.789) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(255, 37, 52, 0.788) 0px, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.welcome-section button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-section button:hover::before {
+    opacity: 1;
+}

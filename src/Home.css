@@ -1,107 +1,19 @@
-.welcome-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+.RecommendedProducts {
+    margin: 60px 20px 40px;
+    text-align: center;
 }
 
-.welcome-section::after {
-    content: "";
-    display: block;
-    width: 40%;
-    height: 2px;
-    background: #ccc;
-    margin-top: 20px;
+.RecommendedProducts h2 {
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #333;
 }
 
-.welcome-section h2 {
-    margin-bottom: 0;
-}
-
-.welcome-section p {
-    margin: 5px 0 5px 0;
-}
-
-.welcome-section button {
-    border: none;
-    border-radius: 30px;
-    background-color: #c2eaba;
-    padding: 11px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-weight: bold;
-
-}
-
-.welcome-section button:hover {
-    background-image:
-        radial-gradient(at 0% 0%, rgba(6, 255, 27, 0.789) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(255, 37, 52, 0.788) 0px, transparent 50%);
-}
-
-.general-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
-    gap: 20px;
-}
-
-
-.info-card::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 40px;
-    height: 40px;
-    background: #8DFF7A;
-    border-radius: 50%;
-    opacity: 0.3;
-}
-
-
-
-.info-card {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #f7fff7;
-    background-image:
-        radial-gradient(at 0% 0%, rgba(141, 255, 122, 0.4) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(76, 175, 80, 0.3) 0px, transparent 50%);
-    box-shadow: 0 10px 20px rgba(126, 217, 109, 0.2);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid #c2eaba;
-
-    transition: all 0.3s ease;
-
-    flex: 1 1 300px;
-    /* Grow, shrink, but try to stay around 300px wide */
-    max-width: 400px;
-}
-
-
-.info-card h3 {
-    min-height: 3em;
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-
-.info-card p {
-    margin: 5px 0 5px 0;
-}
-
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
