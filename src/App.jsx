@@ -15,7 +15,7 @@ export default function App() {
     <>
       <Header isOpen={isOpen} handleMenuClick={handleMenuClick} />
       <Sidebar isOpen={isOpen} />
-      <Home />
+      <Home isOpen={isOpen} />
     </>
   );
 }

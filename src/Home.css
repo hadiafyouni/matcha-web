@@ -1,3 +1,12 @@
+.home {
+    transition: filter 0.3s ease;
+}
+
+.home.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+}
+
 .RecommendedProducts {
     margin: 60px 20px 40px;
     text-align: center;

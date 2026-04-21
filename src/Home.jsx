@@ -7,9 +7,9 @@ import img2 from "./assets/IMG_4605.png";
 import img3 from "./assets/IMG_4606.png";
 import img4 from "./assets/IMG_4607.png";
 
-export default function Home() {
+export default function Home({ isOpen }) {
     return (
-        <div className="home">
+        <div className={`home ${isOpen ? 'blurred' : ''}`}>
             <WelcomeSection />
             <GeneralInfo />
 
