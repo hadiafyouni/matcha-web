@@ -16,28 +16,28 @@ export default function Home() {
             <div className="RecommendedProducts">
                 <h2>Our Top Products</h2>
                 <div className="products-grid">
-                    <ProductCard 
-                        image={img1} 
-                        name="Matcha Ceremonial Grade" 
-                        price="$29.99" 
+                    <ProductCard
+                        image={img1}
+                        name="Classic Matcha"
+                        price="$29.99"
                         description="Premium ceremonial grade for an authentic matcha experience."
                     />
-                    <ProductCard 
-                        image={img2} 
-                        name="Culinary Matcha" 
-                        price="$19.99" 
+                    <ProductCard
+                        image={img2}
+                        name="Banana Bread"
+                        price="$19.99"
                         description="Perfect for baking and making delicious matcha lattes."
                     />
-                    <ProductCard 
-                        image={img3} 
-                        name="Matcha Whisk Set" 
-                        price="$24.99" 
+                    <ProductCard
+                        image={img3}
+                        name="Strawberry Jam"
+                        price="$24.99"
                         description="Authentic bamboo whisk and scoop for the perfect froth."
                     />
-                    <ProductCard 
-                        image={img4} 
-                        name="Matcha Starter Kit" 
-                        price="$45.00" 
+                    <ProductCard
+                        image={img4}
+                        name="Vanilla Matcha"
+                        price="$45.00"
                         description="Everything you need to begin your matcha journey."
                     />
                 </div>
