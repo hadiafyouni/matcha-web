@@ -1,8 +1,12 @@
 .header {
     position: relative;
     overflow: hidden;
-    height: 100px;
-    background: #1e293b;
+    background: #173018;
+    height: var(--header-height);
+}
+
+:root {
+    --header-height: 90px;
 }
 
 .nav {
@@ -44,7 +48,7 @@
 .wave1 {
     bottom: -25px;
     height: 90px;
-    background: rgba(56, 189, 248, 0.35);
+    background: rgba(21, 239, 10, 0.797);
     animation: waveMove1 6s ease-in-out infinite;
     z-index: 1;
 }
@@ -52,7 +56,7 @@
 .wave2 {
     bottom: -35px;
     height: 115px;
-    background: rgba(99, 102, 241, 0.28);
+    background: rgba(84, 221, 69, 0.522);
     animation: waveMove2 9s ease-in-out infinite;
     z-index: 2;
 }
@@ -117,12 +121,11 @@
     background-color: transparent;
     border: none;
     color: white;
-
     cursor: pointer;
 }
 
 .bars {
-    font-size: 30px;
+    font-size: 28px;
     transition: transform 0.3s ease;
 }
 
@@ -132,8 +135,22 @@
 
 
 .signin-buttons {
-    background-color: transparent;
+    background-color: #183017;
     border: none;
+    border-radius: 30px;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
+    padding: 12px;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease
+}
+
+.signin-buttons:hover {
+    background-color: #88e977;
+    color: black;
+}
+
+.signin-buttons:active {
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+    ;
 }
