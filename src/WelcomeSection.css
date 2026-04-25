@@ -6,14 +6,6 @@
 
 }
 
-.welcome-section::after {
-    content: "";
-    display: block;
-    width: 40%;
-    height: 2px;
-    background: #ccc;
-    margin-top: 20px;
-}
 
 .welcome-section h2 {
     margin-bottom: 0;
