@@ -59,7 +59,30 @@
 }
 
 
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+@media (hover: hover) {
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
+    }
+}
+
+@media (max-width: 768px) {
+    .general-info {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .info-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .info-card h3 {
+        min-height: auto;
+        font-size: 1.1rem;
+    }
+
+    .info-card p {
+        font-size: 0.9rem;
+    }
 }

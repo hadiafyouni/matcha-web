@@ -89,3 +89,36 @@
 .add-to-cart-btn:hover {
     background-color: #8DFF7A;
 }
+
+@media (max-width: 768px) {
+    .RecommendedProducts {
+        padding: 15px;
+    }
+
+    .product-image-container {
+        height: 220px;
+    }
+
+    .product-info {
+        padding: 15px;
+    }
+
+    .product-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .product-desc {
+        font-size: 0.85rem;
+    }
+
+    .add-to-cart-btn {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-image-container {
+        height: 180px;
+    }
+}

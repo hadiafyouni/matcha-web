@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css"
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Home from "./Home";
+import Home from "./Home/Home";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);

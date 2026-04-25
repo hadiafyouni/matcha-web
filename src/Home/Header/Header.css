@@ -3,6 +3,7 @@
     overflow: hidden;
     background: #173018;
     height: var(--header-height);
+    z-index: 10;
 }
 
 :root {
@@ -152,5 +153,48 @@
 
 .signin-buttons:active {
     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.4);
-    ;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-height: 70px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .signin-buttons {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .bars {
+        font-size: 24px;
+    }
+
+    .wave1 {
+        bottom: -20px;
+        height: 70px;
+    }
+
+    .wave2 {
+        bottom: -28px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --header-height: 60px;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .signin-buttons {
+        font-size: 13px;
+        padding: 7px 10px;
+    }
 }

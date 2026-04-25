@@ -1,4 +1,5 @@
 import './ShopByMood.css';
+import PrimaryButton from '../../components/PrimaryButton';
 
 export default function ShopByMood() {
     return (
@@ -9,19 +10,19 @@ export default function ShopByMood() {
                     <span className="mood-emoji">⚡</span>
                     <h3>Need Focus?</h3>
                     <p>Clean energy for deep work and study sessions without the crash.</p>
-                    <button className="mood-btn">Find Focus</button>
+                    <PrimaryButton>Find Focus</PrimaryButton>
                 </div>
                 <div className="mood-card">
                     <span className="mood-emoji">🧘‍♀️</span>
                     <h3>Winding Down?</h3>
                     <p>Soothing, restorative blends for a relaxing afternoon ritual.</p>
-                    <button className="mood-btn">Relax Now</button>
+                    <PrimaryButton>Relax Now</PrimaryButton>
                 </div>
                 <div className="mood-card">
                     <span className="mood-emoji">🧁</span>
                     <h3>Sweet Tooth?</h3>
                     <p>Vibrant culinary matcha perfect for baking, smoothies, and lattes.</p>
-                    <button className="mood-btn">Satisfy Cravings</button>
+                    <PrimaryButton>Satisfy Cravings</PrimaryButton>
                 </div>
             </div>
         </div>

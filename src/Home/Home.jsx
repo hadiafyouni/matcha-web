@@ -1,8 +1,8 @@
 import "./Home.css";
-import WelcomeSection from "./WelcomeSection";
-import GeneralInfo from "./GeneralInfo";
-import ShopByMood from "./ShopByMood";
-import ProductCard from "./ProductCard";
+import WelcomeSection from "../WelcomeSection";
+import GeneralInfo from "./Generalinfo/GeneralInfo";
+import ShopByMood from "./ShopByMood/ShopByMood";
+import ProductCard from "./TopProducts/ProductCard";
 import img1 from "./assets/IMG_15.png";
 import img2 from "./assets/IMG_13.png";
 
