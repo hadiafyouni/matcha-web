@@ -1,6 +1,7 @@
 import "./Home.css";
 import WelcomeSection from "./WelcomeSection";
 import GeneralInfo from "./GeneralInfo";
+import ShopByMood from "./ShopByMood";
 import ProductCard from "./ProductCard";
 import img1 from "./assets/IMG_15.png";
 import img2 from "./assets/IMG_13.png";
@@ -29,6 +30,8 @@ export default function Home({ isOpen }) {
                     />
                 </div>
             </div>
+
+            <ShopByMood />
         </div>
     )
 }
