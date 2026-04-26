@@ -11,11 +11,13 @@ const btnStyles = {
     textTransform: 'none',
     width: '100%',
     transition: 'all 0.3s ease',
+    textDecoration: 'none',
     '&:hover': {
         backgroundColor: '#2c4c3b',
         color: 'white',
         borderColor: '#2c4c3b',
         borderWidth: '2px',
+        textDecoration: 'none',
     }
 };
 

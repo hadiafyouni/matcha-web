@@ -1,5 +1,6 @@
 import './ShopByMood.css';
 import PrimaryButton from '../../components/PrimaryButton';
+import { Link } from 'react-router-dom';
 
 export default function ShopByMood() {
     return (
@@ -10,19 +11,19 @@ export default function ShopByMood() {
                     <span className="mood-emoji">⚡</span>
                     <h3>Need Focus?</h3>
                     <p>Clean energy for deep work and study sessions without the crash.</p>
-                    <PrimaryButton>Find Focus</PrimaryButton>
+                    <PrimaryButton component={Link} to="/menu/1">Find Focus</PrimaryButton>
                 </div>
                 <div className="mood-card">
                     <span className="mood-emoji">🧘‍♀️</span>
                     <h3>Winding Down?</h3>
                     <p>Soothing, restorative blends for a relaxing afternoon ritual.</p>
-                    <PrimaryButton>Relax Now</PrimaryButton>
+                    <PrimaryButton component={Link} to="/menu/4">Relax Now</PrimaryButton>
                 </div>
                 <div className="mood-card">
                     <span className="mood-emoji">🧁</span>
                     <h3>Sweet Tooth?</h3>
                     <p>Vibrant culinary matcha perfect for baking, smoothies, and lattes.</p>
-                    <PrimaryButton>Satisfy Cravings</PrimaryButton>
+                    <PrimaryButton component={Link} to="/menu/2">Satisfy Cravings</PrimaryButton>
                 </div>
             </div>
         </div>

@@ -16,3 +16,14 @@ body {
   filter: blur(5px);
   pointer-events: none;
 }
+
+.sidebar-overlay {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 99;
+  cursor: pointer;
+}

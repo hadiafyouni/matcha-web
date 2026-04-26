@@ -25,6 +25,8 @@ export default function App() {
       <Header isOpen={isOpen} handleMenuClick={handleMenuClick} />
       <Sidebar isOpen={isOpen} closeMenu={closeMenu} />
 
+      {isOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
+
       <main className={isOpen ? "main-content blurred" : "main-content"}>
         <Routes>
 

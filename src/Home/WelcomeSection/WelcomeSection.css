@@ -22,44 +22,7 @@
     line-height: 1.6;
 }
 
-.welcome-section button {
-    border: 2px solid #2c4c3b;
-    border-radius: 30px;
-    background-color: transparent;
-    color: #2c4c3b;
-    padding: 12px 32px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-}
 
-.welcome-section button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #2c4c3b;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-    border-radius: 30px;
-}
-
-.welcome-section button:hover {
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(44, 76, 59, 0.2);
-}
-
-.welcome-section button:hover::before {
-    opacity: 1;
-}
 
 @media (max-width: 768px) {
     .welcome-section {

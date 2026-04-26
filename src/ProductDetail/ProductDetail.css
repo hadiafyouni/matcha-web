@@ -78,10 +78,6 @@
     margin-top: 10px;
 }
 
-.back-button-container {
-    border-radius: 0;
-}
-
 @media (max-width: 768px) {
     .product-detail-grid {
         grid-template-columns: 1fr;
