@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom"; // 1. Import Router tools
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css"
 import Header from "../Home/Header/Header";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import Home from "../Home/Home";
-import Menu from "../Menu/Menu"; // 2. Import your new Menu component
+import Menu from "../Menu/Menu";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import OurStory from "../OurStory/OurStory";
+import Cart from "../Cart/Cart";
+import { CartProvider } from "../context/CartContext";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,30 +17,29 @@ export default function App() {
     setIsOpen((prev) => !prev);
   }
 
-  // Helper to close menu when a link is clicked
-  function closeMenu() {
+  // Helper to close the sidebar when a link is clicked
+  function closeSidebar() {
     setIsOpen(false);
   }
 
   return (
-    <BrowserRouter>
-      <Header isOpen={isOpen} handleMenuClick={handleMenuClick} />
-      <Sidebar isOpen={isOpen} closeMenu={closeMenu} />
+    <CartProvider>
+      <BrowserRouter>
+        <Header isOpen={isOpen} handleMenuClick={handleMenuClick} />
+        <Sidebar isOpen={isOpen} closeSidebar={closeSidebar} />
 
-      {isOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
+        {isOpen && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
 
-      <main className={isOpen ? "main-content blurred" : "main-content"}>
-        <Routes>
-
-          <Route path="/" element={<Home isOpen={isOpen} />} />
-
-          <Route path="/menu" element={<Menu isOpen={isOpen} />} />
-
-          <Route path="/menu/:id" element={<ProductDetail />} />
-
-          <Route path="/story" element={<OurStory />} />
-        </Routes>
-      </main>
-    </BrowserRouter>
+        <main className={isOpen ? "main-content blurred" : "main-content"}>
+          <Routes>
+            <Route path="/" element={<Home isOpen={isOpen} />} />
+            <Route path="/menu" element={<Menu isOpen={isOpen} />} />
+            <Route path="/menu/:id" element={<ProductDetail />} />
+            <Route path="/story" element={<OurStory />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </CartProvider>
   );
 }

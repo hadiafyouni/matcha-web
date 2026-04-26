@@ -1,13 +1,23 @@
 
+import { useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { matchaItems, accessoriesItems } from '../data';
 import PrimaryButton from '../components/PrimaryButton';
+import Toast from '../components/Toast';
+import { useCart } from '../context/CartContext';
 import './ProductDetail.css';
 
 export default function ProductDetail() {
 
     const { id } = useParams();
     const location = useLocation();
+    const { addToCart } = useCart();
+    const [toastOpen, setToastOpen] = useState(false);
+
+    function handleAddToCart() {
+        addToCart(product);
+        setToastOpen(true);
+    }
 
 
     const from = location.state?.from || "menu";
@@ -40,18 +50,18 @@ export default function ProductDetail() {
                     sx={{
                         width: 'auto',
                         border: 'none',
-                        borderRadius: '50px', // Perfect pill shape
-                        padding: '8px 24px', // Generous side breathing room
-                        backgroundColor: 'rgba(44, 76, 59, 0.05)', // A 5% opacity tint of your matcha green
-                        color: '#2c4c3b', // Your deep matcha green
+                        borderRadius: '50px',
+                        padding: '8px 24px',
+                        backgroundColor: 'rgba(44, 76, 59, 0.05)',
+                        color: '#2c4c3b',
                         fontWeight: 500,
                         fontSize: '0.95rem',
-                        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)', // Ultra-smooth designer animation
+                        transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                         '&:hover': {
                             border: 'none',
-                            backgroundColor: 'rgba(44, 76, 59, 0.12)', // Slightly darker tint on hover
-                            color: '#1a251f', // Almost black
-                            transform: 'translateX(-6px)' // Smooth slide back
+                            backgroundColor: 'rgba(44, 76, 59, 0.12)',
+                            color: '#1a251f',
+                            transform: 'translateX(-6px)'
                         }
                     }}
                 >
@@ -71,14 +81,19 @@ export default function ProductDetail() {
                     <p className="price">{product.price}</p>
                     <p className="description">{product.desc}</p>
 
-                    <div className="action-area">
-
-                        <PrimaryButton onClick={() => alert(`Added ${product.name} to cart!`)}>
+            <div className="action-area">
+                        <PrimaryButton onClick={handleAddToCart}>
                             Add to Cart
                         </PrimaryButton>
                     </div>
                 </div>
             </div>
+
+            <Toast
+                open={toastOpen}
+                onClose={() => setToastOpen(false)}
+                message={`${product?.name} added to cart!`}
+            />
 
         </div>
     );

@@ -1,41 +1,30 @@
-import { Link, useLocation } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link, useLocation } from "react-router-dom"; // 1. Import Link and useLocation
 import "./Sidebar.css";
 
-// 2. Add closeMenu to the props
-export default function Sidebar({ isOpen, closeMenu }) {
+// 2. Add closeSidebar to the props
+export default function Sidebar({ isOpen, closeSidebar }) {
     const location = useLocation();
 
     return (
         <aside className={isOpen ? "sidebar open" : "sidebar"}>
             <ul className="sidebar-elements">
-                {/* 3. Wrap items in Links and add the closeMenu click handler */}
+                {/* 3. Wrap items in Links and add the closeSidebar click handler */}
                 <li className={location.pathname === "/" ? "active" : ""}>
-                    <Link to="/" onClick={closeMenu}>Home</Link>
+                    <Link to="/" onClick={closeSidebar}>Home</Link>
                 </li>
                 <li className={location.pathname === "/menu" ? "active" : ""}>
-                    <Link to="/menu" onClick={closeMenu}>Menu</Link>
+                    <Link to="/menu" onClick={closeSidebar}>Menu</Link>
                 </li>
                 <li className={location.pathname === "/story" ? "active" : ""}>
-                    <Link to="/story" onClick={closeMenu}>Our Story</Link>
+                    <Link to="/story" onClick={closeSidebar}>Our Story</Link>
+                </li>
+                <li className={location.pathname === "/cart" ? "active" : ""}>
+                    <Link to="/cart" onClick={closeSidebar}>Cart</Link>
                 </li>
                 <li className={location.pathname === "/contact" ? "active" : ""}>
-                    <Link to="/contact" onClick={closeMenu}>Contact</Link>
+                    <Link to="/contact" onClick={closeSidebar}>Contact</Link>
                 </li>
             </ul>
-
-            <div className="sidebar-social">
-                <a
-                    href="https://www.instagram.com/matchahorikku/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-link"
-                >
-                    <FontAwesomeIcon icon={faInstagram} className="social-icon" />
-                    @matchahorikku
-                </a>
-            </div>
         </aside>
     );
 }
