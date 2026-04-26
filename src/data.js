@@ -4,35 +4,35 @@ export const matchaItems = [
     {
         id: 1,
         name: "Classic Ceremonial Matcha",
-        price: "$25",
+        price: "$10",
         desc: "Pure, stone-ground Uji matcha whisked to a creamy froth.",
         image: img5
     },
     {
         id: 2,
         name: "Strawberry Jam",
-        price: "$8.00",
+        price: "$12",
         desc: "House-made strawberry preserves layered with premium matcha and milk.",
         image: img1
     },
     {
         id: 3,
         name: "Banana Bread",
-        price: "$5.50",
+        price: "$12",
         desc: "Warm, toasted banana bread infused with a hint of culinary matcha.",
         image: img4
     },
     {
         id: 4,
         name: "Earl Grey",
-        price: "$7.50",
+        price: "$12",
         desc: "A sophisticated blend of bergamot-infused tea and earthy green tea.",
         image: img3
     },
     {
         id: 5,
         name: "Vanilla",
-        price: "$7.00",
+        price: "$12",
         desc: "Silky smooth matcha sweetened with organic vanilla bean syrup.",
         image: img2
     }
@@ -51,14 +51,14 @@ export const accessoriesItems = [
         name: "Ceramic Matcha Bowl (Chawan)",
         price: "$32.00",
         desc: "Traditional Japanese ceramic bowl, designed for whisking and sipping.",
-        image: img10
+        image: img11
     },
     {
         id: 103,
         name: "Bamboo Scoop (Chashaku)",
         price: "$8.00",
         desc: "Authentic bamboo scoop for precise measurement of matcha powder.",
-        image: img11
+        image: img10
     },
     {
         id: 104,

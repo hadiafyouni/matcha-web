@@ -1,0 +1,104 @@
+/* src/ProductDetail.css */
+
+/* Core Container */
+.product-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: 80vh;
+}
+
+/* Fallback state spacing */
+.product-not-found {
+    text-align: center;
+    padding: 100px 20px;
+    color: #2d3748;
+}
+
+.back-button-container {
+    margin-bottom: 40px;
+}
+
+/* 2-Column Grid Layout */
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* Premium Image Presentation */
+.product-image-section {
+    background-color: #f7fafc;
+    /* Very soft gray background to make the image pop */
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.product-image-section img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    max-height: 500px;
+    transition: transform 0.4s ease;
+}
+
+.product-image-section:hover img {
+    transform: scale(1.05);
+    /* Subtle zoom effect on hover */
+}
+
+/* Typography and Spacing for Info */
+.product-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.product-info-section h1 {
+    font-size: 3rem;
+    color: #1a202c;
+    margin: 0;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.product-info-section .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2c4c3b;
+    /* Matches your PrimaryButton green */
+    margin: 0;
+}
+
+.product-info-section .description {
+    font-size: 1.15rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.action-area {
+    margin-top: 10px;
+}
+
+/* Responsive adjustments for Tablets & Phones */
+@media (max-width: 768px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        /* Stacks image above text */
+        gap: 40px;
+    }
+
+    .product-info-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .product-image-section {
+        padding: 20px;
+    }
+}

@@ -62,3 +62,8 @@
     color: #2f855a;
     font-weight: bold;
 }
+
+.menu-card-link {
+    text-decoration: none;
+    color: inherit;
+}

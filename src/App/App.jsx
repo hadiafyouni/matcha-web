@@ -5,6 +5,7 @@ import Header from "../Home/Header/Header";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import Home from "../Home/Home";
 import Menu from "../Menu/Menu"; // 2. Import your new Menu component
+import ProductDetail from "../ProductDetail";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,21 +20,18 @@ export default function App() {
   }
 
   return (
-    <BrowserRouter> {/* 3. Wrap everything in BrowserRouter */}
+    <BrowserRouter>
       <Header isOpen={isOpen} handleMenuClick={handleMenuClick} />
-
-      {/* Pass closeMenu to Sidebar so links can close the drawer */}
       <Sidebar isOpen={isOpen} closeMenu={closeMenu} />
 
       <main className={isOpen ? "main-content blurred" : "main-content"}>
-        <Routes> {/* 4. Define your "TV Screen" area */}
+        <Routes>
 
-          {/* URL: / -> Shows Home */}
           <Route path="/" element={<Home isOpen={isOpen} />} />
 
-          {/* URL: /menu -> Shows Menu */}
           <Route path="/menu" element={<Menu isOpen={isOpen} />} />
 
+          <Route path="/menu/:id" element={<ProductDetail />} />
         </Routes>
       </main>
     </BrowserRouter>

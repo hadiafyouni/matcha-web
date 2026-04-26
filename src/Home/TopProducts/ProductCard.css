@@ -89,3 +89,8 @@
 .add-to-cart-btn:hover {
     background-color: #8DFF7A;
 }
+
+.product-card-link {
+    text-decoration: none;
+    color: inherit;
+}

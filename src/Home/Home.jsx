@@ -18,10 +18,12 @@ export default function Home({ isOpen }) {
                     {[matchaItems[0], matchaItems[1]].map((item) => (
                         <ProductCard
                             key={item.id}
+                            id={item.id}
                             image={item.image}
                             name={item.name}
                             price={item.price}
                             description={item.desc}
+                            from="home"
                         />
                     ))}
                 </div>

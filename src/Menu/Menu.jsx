@@ -1,4 +1,5 @@
 import './Menu.css';
+import { Link } from 'react-router-dom';
 import { matchaItems, accessoriesItems } from "../data";
 
 export default function Menu() {
@@ -14,18 +15,20 @@ export default function Menu() {
                 <h2 className="section-title">Cups</h2>
                 <div className="menu-grid">
                     {matchaItems.map((item) => (
-                        <div key={item.id} className="menu-card">
-                            <div className="image-box">
-                                <img src={item.image} alt={item.name} className="menu-image" />
-                            </div>
-                            <div className="content-box">
-                                <div className="menu-title-row">
-                                    <h3 className="menu-title">{item.name}</h3>
-                                    <span className="price-tag">{item.price}</span>
+                        <Link to={`/menu/${item.id}`} key={item.id} className="menu-card-link">
+                            <div className="menu-card">
+                                <div className="image-box">
+                                    <img src={item.image} alt={item.name} className="menu-image" />
                                 </div>
-                                <p className="menu-description">{item.desc}</p>
+                                <div className="content-box">
+                                    <div className="menu-title-row">
+                                        <h3 className="menu-title">{item.name}</h3>
+                                        <span className="price-tag">{item.price}</span>
+                                    </div>
+                                    <p className="menu-description">{item.desc}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -34,18 +37,20 @@ export default function Menu() {
                 <h2 className="section-title">Matcha Accessories</h2>
                 <div className="menu-grid">
                     {accessoriesItems.map((item) => (
-                        <div key={item.id} className="menu-card">
-                            <div className="image-box">
-                                <img src={item.image} alt={item.name} className="menu-image" />
-                            </div>
-                            <div className="content-box">
-                                <div className="menu-title-row">
-                                    <h3 className="menu-title">{item.name}</h3>
-                                    <span className="price-tag">{item.price}</span>
+                        <Link to={`/menu/${item.id}`} key={item.id} className="menu-card-link">
+                            <div className="menu-card">
+                                <div className="image-box">
+                                    <img src={item.image} alt={item.name} className="menu-image" />
                                 </div>
-                                <p className="menu-description">{item.desc}</p>
+                                <div className="content-box">
+                                    <div className="menu-title-row">
+                                        <h3 className="menu-title">{item.name}</h3>
+                                        <span className="price-tag">{item.price}</span>
+                                    </div>
+                                    <p className="menu-description">{item.desc}</p>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
