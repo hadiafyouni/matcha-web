@@ -1,10 +1,9 @@
 import "./Home.css";
-import WelcomeSection from "../WelcomeSection";
+import WelcomeSection from "./WelcomeSection/WelcomeSection";
 import GeneralInfo from "./Generalinfo/GeneralInfo";
 import ShopByMood from "./ShopByMood/ShopByMood";
 import ProductCard from "./TopProducts/ProductCard";
-import img1 from "./assets/IMG_15.png";
-import img2 from "./assets/IMG_13.png";
+import { matchaItems } from "../data";
 
 
 export default function Home({ isOpen }) {
@@ -16,18 +15,15 @@ export default function Home({ isOpen }) {
             <div className="RecommendedProducts">
                 <h2>Our Top Products</h2>
                 <div className="products-grid">
-                    <ProductCard
-                        image={img1}
-                        name="Classic Matcha"
-                        price="$10"
-                        description="Premium ceremonial grade for an authentic matcha experience."
-                    />
-                    <ProductCard
-                        image={img2}
-                        name="Banana Bread"
-                        price="$12"
-                        description="Perfect for baking and making delicious matcha lattes."
-                    />
+                    {[matchaItems[0], matchaItems[1]].map((item) => (
+                        <ProductCard
+                            key={item.id}
+                            image={item.image}
+                            name={item.name}
+                            price={item.price}
+                            description={item.desc}
+                        />
+                    ))}
                 </div>
             </div>
 

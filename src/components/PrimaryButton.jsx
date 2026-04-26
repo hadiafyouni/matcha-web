@@ -20,11 +20,10 @@ const btnStyles = {
 };
 
 export default function PrimaryButton({ children, sx, ...props }) {
-    // Merge any additional sx props passed from the parent with our default styles
     return (
-        <Button 
-            variant="outlined" 
-            sx={{ ...btnStyles, ...sx }} 
+        <Button
+            variant="outlined"
+            sx={{ ...btnStyles, ...sx }}
             {...props}
         >
             {children}
