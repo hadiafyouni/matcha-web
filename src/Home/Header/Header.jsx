@@ -33,9 +33,9 @@ export default function Header({ isOpen, handleMenuClick }) {
                     <h1 className="logo">Matcha Horikku</h1>
                 </Link>
 
-                <button className="signin-buttons">
+                <Link to="/signin" className="signin-buttons">
                     Sign in
-                </button>
+                </Link>
             </nav>
         </header>
     );

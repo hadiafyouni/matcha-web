@@ -8,6 +8,7 @@ import Menu from "../Menu/Menu";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import OurStory from "../OurStory/OurStory";
 import Cart from "../Cart/Cart";
+import SignIn from "../SignIn/SignIn";
 import { CartProvider } from "../context/CartContext";
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
             <Route path="/menu/:id" element={<ProductDetail />} />
             <Route path="/story" element={<OurStory />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </main>
       </BrowserRouter>
