@@ -1,6 +1,3 @@
-/* src/ProductDetail.css */
-
-/* Core Container */
 .product-detail-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -8,7 +5,6 @@
     min-height: 80vh;
 }
 
-/* Fallback state spacing */
 .product-not-found {
     text-align: center;
     padding: 100px 20px;
@@ -19,7 +15,7 @@
     margin-bottom: 40px;
 }
 
-/* 2-Column Grid Layout */
+
 .product-detail-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -27,10 +23,9 @@
     align-items: center;
 }
 
-/* Premium Image Presentation */
+
 .product-image-section {
     background-color: #f7fafc;
-    /* Very soft gray background to make the image pop */
     border-radius: 20px;
     padding: 40px;
     display: flex;
@@ -49,10 +44,8 @@
 
 .product-image-section:hover img {
     transform: scale(1.05);
-    /* Subtle zoom effect on hover */
 }
 
-/* Typography and Spacing for Info */
 .product-info-section {
     display: flex;
     flex-direction: column;
@@ -71,7 +64,6 @@
     font-size: 1.8rem;
     font-weight: 700;
     color: #2c4c3b;
-    /* Matches your PrimaryButton green */
     margin: 0;
 }
 
@@ -86,11 +78,13 @@
     margin-top: 10px;
 }
 
-/* Responsive adjustments for Tablets & Phones */
+.back-button-container {
+    border-radius: 0;
+}
+
 @media (max-width: 768px) {
     .product-detail-grid {
         grid-template-columns: 1fr;
-        /* Stacks image above text */
         gap: 40px;
     }
 

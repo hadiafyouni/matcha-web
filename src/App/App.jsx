@@ -5,7 +5,8 @@ import Header from "../Home/Header/Header";
 import Sidebar from "../Home/Sidebar/Sidebar";
 import Home from "../Home/Home";
 import Menu from "../Menu/Menu"; // 2. Import your new Menu component
-import ProductDetail from "../ProductDetail";
+import ProductDetail from "../ProductDetail/ProductDetail";
+import OurStory from "../OurStory/OurStory";
 
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +33,8 @@ export default function App() {
           <Route path="/menu" element={<Menu isOpen={isOpen} />} />
 
           <Route path="/menu/:id" element={<ProductDetail />} />
+
+          <Route path="/story" element={<OurStory />} />
         </Routes>
       </main>
     </BrowserRouter>
