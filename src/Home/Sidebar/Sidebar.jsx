@@ -1,4 +1,6 @@
-import { Link, useLocation } from "react-router-dom"; // 1. Import Link and useLocation
+import { Link, useLocation } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import "./Sidebar.css";
 
 // 2. Add closeMenu to the props
@@ -22,6 +24,18 @@ export default function Sidebar({ isOpen, closeMenu }) {
                     <Link to="/contact" onClick={closeMenu}>Contact</Link>
                 </li>
             </ul>
+
+            <div className="sidebar-social">
+                <a
+                    href="https://www.instagram.com/matchahorikku/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                >
+                    <FontAwesomeIcon icon={faInstagram} className="social-icon" />
+                    @matchahorikku
+                </a>
+            </div>
         </aside>
     );
 }

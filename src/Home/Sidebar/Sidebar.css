@@ -48,6 +48,35 @@
     transform: translateX(5px);
 }
 
+.sidebar-social {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    padding: 0 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(240, 253, 244, 0.5);
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    color: #f0fdf4;
+    background-color: rgba(39, 103, 73, 0.5);
+}
+
+.social-icon {
+    font-size: 1.3rem;
+}
+
 @media (max-width: 768px) {
     .sidebar {
         width: 230px;
