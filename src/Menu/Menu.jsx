@@ -1,5 +1,5 @@
 import './Menu.css';
-import { matchaItems } from "../data";
+import { matchaItems, accessoriesItems } from "../data";
 
 export default function Menu() {
 
@@ -10,27 +10,44 @@ export default function Menu() {
                 <p>Hand-crafted flavors from Kyoto to Sydney.</p>
             </header>
 
-            <div className="menu-grid">
-                {/* This loop handles 3 items or 300 items exactly the same way */}
-                {matchaItems.map((item) => (
-                    <div key={item.id} className="menu-card">
-
-                        <div className="image-box">
-
-                            <img src={item.image} alt={item.name} className="menu-image" />
-
-                        </div>
-
-                        <div className="content-box">
-                            <div className="menu-title-row">
-                                <h3 className="menu-title">{item.name}</h3>
-                                <span className="price-tag">{item.price}</span>
+            <div className="menu-section">
+                <h2 className="section-title">Cups</h2>
+                <div className="menu-grid">
+                    {matchaItems.map((item) => (
+                        <div key={item.id} className="menu-card">
+                            <div className="image-box">
+                                <img src={item.image} alt={item.name} className="menu-image" />
                             </div>
-                            <p className="menu-description">{item.desc}</p>
+                            <div className="content-box">
+                                <div className="menu-title-row">
+                                    <h3 className="menu-title">{item.name}</h3>
+                                    <span className="price-tag">{item.price}</span>
+                                </div>
+                                <p className="menu-description">{item.desc}</p>
+                            </div>
                         </div>
+                    ))}
+                </div>
+            </div>
 
-                    </div>
-                ))}
+            <div className="menu-section">
+                <h2 className="section-title">Matcha Accessories</h2>
+                <div className="menu-grid">
+                    {accessoriesItems.map((item) => (
+                        <div key={item.id} className="menu-card">
+                            <div className="image-box">
+                                <img src={item.image} alt={item.name} className="menu-image" />
+                            </div>
+                            <div className="content-box">
+                                <div className="menu-title-row">
+                                    <h3 className="menu-title">{item.name}</h3>
+                                    <span className="price-tag">{item.price}</span>
+                                </div>
+                                <p className="menu-description">{item.desc}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

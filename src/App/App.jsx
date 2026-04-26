@@ -25,7 +25,7 @@ export default function App() {
       {/* Pass closeMenu to Sidebar so links can close the drawer */}
       <Sidebar isOpen={isOpen} closeMenu={closeMenu} />
 
-      <main>
+      <main className={isOpen ? "main-content blurred" : "main-content"}>
         <Routes> {/* 4. Define your "TV Screen" area */}
 
           {/* URL: / -> Shows Home */}

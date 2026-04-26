@@ -8,7 +8,7 @@ import { matchaItems } from "../data";
 
 export default function Home({ isOpen }) {
     return (
-        <div className={`home ${isOpen ? 'blurred' : ''}`}>
+        <div className="home">
             <WelcomeSection />
             <GeneralInfo />
 
