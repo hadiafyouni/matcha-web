@@ -9,6 +9,7 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import OurStory from "../OurStory/OurStory";
 import Cart from "../Cart/Cart";
 import SignIn from "../SignIn/SignIn";
+import Footer from "../Footer/Footer";
 import { CartProvider } from "../context/CartContext";
 
 export default function App() {
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/signin" element={<SignIn />} />
           </Routes>
+          <Footer />
         </main>
       </BrowserRouter>
     </CartProvider>
