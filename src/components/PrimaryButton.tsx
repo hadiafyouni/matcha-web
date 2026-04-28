@@ -1,4 +1,5 @@
-import { Button } from '@mui/material';
+import { Button, ButtonProps } from '@mui/material';
+import { ReactNode } from 'react';
 
 const btnStyles = {
     color: '#2c4c3b',
@@ -21,7 +22,13 @@ const btnStyles = {
     }
 };
 
-export default function PrimaryButton({ children, sx, ...props }) {
+interface PrimaryButtonProps extends ButtonProps {
+    children: ReactNode;
+    component?: React.ElementType;
+    to?: any;
+}
+
+export default function PrimaryButton({ children, sx, ...props }: PrimaryButtonProps) {
     return (
         <Button
             variant="outlined"

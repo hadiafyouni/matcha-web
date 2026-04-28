@@ -6,15 +6,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 // Helper to extract the numeric value from a price string like "$10" or "$18.00"
-function parsePrice(priceStr) {
+function parsePrice(priceStr: string) {
     return parseFloat(priceStr.replace('$', ''));
 }
 
 export default function Cart() {
     // Pull cart data and functions from the shared Context
-    const { cartItems, increaseQuantity, decreaseQuantity, removeItem } = useCart();
+    const cart = useCart();
+    if (!cart) return null;
+    const { cartItems, increaseQuantity, decreaseQuantity, removeItem } = cart;
 
-    const subtotal = cartItems.reduce((total, item) => total + (parsePrice(item.price) * item.quantity), 0);
+    const subtotal = cartItems.reduce((total, item) => total + (parsePrice(String(item.price)) * item.quantity), 0);
     const shipping = cartItems.length > 0 ? 5.00 : 0;
     const total = subtotal + shipping;
 
@@ -33,7 +35,7 @@ export default function Cart() {
     return (
         <div className="cart-container">
             <h1 className="cart-title">Your Cart</h1>
-            
+
             <div className="cart-content">
                 <div className="cart-items">
                     {cartItems.map((item) => (
@@ -41,12 +43,12 @@ export default function Cart() {
                             <div className="item-image-wrapper">
                                 <img src={item.image} alt={item.name} />
                             </div>
-                            
+
                             <div className="item-details">
                                 <h3>{item.name}</h3>
                                 <p className="item-price">{item.price}</p>
                             </div>
-                            
+
                             <div className="item-quantity">
                                 <button className="qty-btn" onClick={() => decreaseQuantity(item.id)} aria-label="Decrease quantity">
                                     <FontAwesomeIcon icon={faMinus} />
@@ -56,11 +58,11 @@ export default function Cart() {
                                     <FontAwesomeIcon icon={faPlus} />
                                 </button>
                             </div>
-                            
+
                             <div className="item-total">
-                                ${(parsePrice(item.price) * item.quantity).toFixed(2)}
+                                ${(parsePrice(String(item.price)) * item.quantity).toFixed(2)}
                             </div>
-                            
+
                             <button className="remove-btn" onClick={() => removeItem(item.id)} aria-label="Remove item">
                                 <FontAwesomeIcon icon={faTrashCan} />
                             </button>

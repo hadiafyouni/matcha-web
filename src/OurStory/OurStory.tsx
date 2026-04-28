@@ -106,10 +106,10 @@ export default function OurStory() {
                 <p>Explore our carefully curated selection of matcha and accessories.</p>
                 <PrimaryButton
                     component={Link}
-                    to="/menu"
+                    to="/products"
                     sx={{ width: 'auto', padding: '12px 40px', fontSize: '1.1rem' }}
                 >
-                    Browse Our Menu
+                    Browse Our Products
                 </PrimaryButton>
             </section>
 

@@ -8,11 +8,28 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e2e8f0;
     text-align: left;
+    position: relative;
+    height: 100%;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(44, 76, 59, 0.12);
+}
+
+.product-category-tag {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #2c4c3b;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .product-image-container {
@@ -90,4 +107,6 @@
 .product-card-link {
     text-decoration: none;
     color: inherit;
+    display: block;
+    height: 100%;
 }

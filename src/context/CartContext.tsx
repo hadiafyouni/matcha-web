@@ -1,14 +1,35 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, ReactNode } from "react";
+
+export interface Product {
+    id: string | number;
+    name?: string;
+    price?: number | string;
+    image?: string;
+    desc?: string;
+    [key: string]: any;
+}
+
+export interface CartItem extends Product {
+    quantity: number;
+}
+
+interface CartContextType {
+    cartItems: CartItem[];
+    addToCart: (product: Product) => void;
+    increaseQuantity: (id: string | number) => void;
+    decreaseQuantity: (id: string | number) => void;
+    removeItem: (id: string | number) => void;
+}
 
 // 1. Create the Context — this is like creating a "radio channel"
-const CartContext = createContext();
+const CartContext = createContext<CartContextType | undefined>(undefined);
 
 // 2. Create the Provider — this is the "radio station" that broadcasts the cart data
-export function CartProvider({ children }) {
-    const [cartItems, setCartItems] = useState([]);
+export function CartProvider({ children }: { children: ReactNode }) {
+    const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
     // Add a product to the cart (or increase quantity if it already exists)
-    function addToCart(product) {
+    function addToCart(product: Product) {
         setCartItems(prev => {
             const existingItem = prev.find(item => item.id === product.id);
             if (existingItem) {
@@ -26,7 +47,7 @@ export function CartProvider({ children }) {
     }
 
     // Increase quantity by 1
-    function increaseQuantity(id) {
+    function increaseQuantity(id: string | number) {
         setCartItems(prev =>
             prev.map(item =>
                 item.id === id ? { ...item, quantity: item.quantity + 1 } : item
@@ -35,7 +56,7 @@ export function CartProvider({ children }) {
     }
 
     // Decrease quantity by 1 (remove if it hits 0)
-    function decreaseQuantity(id) {
+    function decreaseQuantity(id: string | number) {
         setCartItems(prev =>
             prev
                 .map(item =>
@@ -46,7 +67,7 @@ export function CartProvider({ children }) {
     }
 
     // Remove item entirely
-    function removeItem(id) {
+    function removeItem(id: string | number) {
         setCartItems(prev => prev.filter(item => item.id !== id));
     }
 

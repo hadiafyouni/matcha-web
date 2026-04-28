@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import { matchaItems, accessoriesItems } from '../data';
+import { accessoriesItems } from '../products';
 import PrimaryButton from '../components/PrimaryButton';
 import Toast from '../components/Toast';
 import { useCart } from '../context/CartContext';
@@ -9,32 +9,34 @@ import './ProductDetail.css';
 
 export default function ProductDetail() {
 
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
     const location = useLocation();
-    const { addToCart } = useCart();
+    const cartContext = useCart();
     const [toastOpen, setToastOpen] = useState(false);
 
+
+    const from = location.state?.from || "products";
+    const backPath = from === "home" ? "/" : "/products";
+    const backLabel = from === "home" ? "Back to Home" : "Back to Products";
+
+
+    const allProducts = [...accessoriesItems];
+    const product = allProducts.find((item) => item.id === parseInt(id || "0"));
+
     function handleAddToCart() {
-        addToCart(product);
-        setToastOpen(true);
+        if (product && cartContext) {
+            cartContext.addToCart(product);
+            setToastOpen(true);
+        }
     }
-
-
-    const from = location.state?.from || "menu";
-    const backPath = from === "home" ? "/" : "/menu";
-    const backLabel = from === "home" ? "Back to Home" : "Back to Menu";
-
-
-    const allProducts = [...matchaItems, ...accessoriesItems];
-    const product = allProducts.find((item) => item.id === parseInt(id));
 
 
     if (!product) {
         return (
             <div className="product-not-found">
                 <h2>Product not found.</h2>
-                <PrimaryButton component={Link} to="/menu" sx={{ width: 'auto', mt: 2 }}>
-                    Return to Menu
+                <PrimaryButton component={Link} to="/products" sx={{ width: 'auto', mt: 2 }}>
+                    Return to Products
                 </PrimaryButton>
             </div>
         );
@@ -81,7 +83,7 @@ export default function ProductDetail() {
                     <p className="price">{product.price}</p>
                     <p className="description">{product.desc}</p>
 
-            <div className="action-area">
+                    <div className="action-area">
                         <PrimaryButton onClick={handleAddToCart}>
                             Add to Cart
                         </PrimaryButton>

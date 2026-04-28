@@ -264,6 +264,54 @@
     transform: rotate(90deg);
 }
 
+/* ═══ Header Actions (cart + sign in) ═══ */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* ═══ Cart Button ═══ */
+.cart-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #d1fae5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cart-button:hover {
+    background-color: rgba(167, 243, 208, 0.12);
+    color: #a7f3d0;
+}
+
+.cart-icon {
+    font-size: 18px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: linear-gradient(135deg, #34d399, #10b981);
+    color: #0a1a0f;
+    font-size: 0.65rem;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+}
+
 /* ═══ Sign in ═══ */
 .signin-buttons {
     background-color: transparent;
@@ -291,6 +339,14 @@
 }
 
 /* ═══ Responsive ═══ */
+
+/* Desktop: hide hamburger, sidebar auto-shows on hover */
+@media (min-width: 769px) {
+    .bars-buttons {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
     :root {
         --header-height: 65px;
@@ -313,6 +369,10 @@
         font-size: 20px;
     }
 
+    .cart-icon {
+        font-size: 16px;
+    }
+
     .wave1 { bottom: -18px; height: 60px; }
     .wave2 { bottom: -25px; height: 75px; }
     .wave3 { bottom: -12px; height: 50px; }
@@ -328,6 +388,27 @@
     .logo {
         font-size: 0.95rem;
         letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+        gap: 8px;
+    }
+
+    .cart-button {
+        width: 34px;
+        height: 34px;
+    }
+
+    .cart-icon {
+        font-size: 15px;
+    }
+
+    .cart-badge {
+        width: 16px;
+        height: 16px;
+        font-size: 0.6rem;
+        top: 0;
+        right: 0;
     }
 
     .signin-buttons {

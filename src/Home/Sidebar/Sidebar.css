@@ -1,20 +1,19 @@
+/* ═══════════════════════════════════════════
+   Sidebar — Desktop Icon Rail + Mobile Slide
+   ═══════════════════════════════════════════ */
+
+/* ───── Shared Base ───── */
 .sidebar {
     position: fixed;
     top: var(--header-height);
-    left: -250px;
-    width: 250px;
-    height: calc(100vh - var(--header-height));
     background: rgba(18, 20, 19, 0.85);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 5px 0 25px rgba(0, 0, 0, 0.2);
-    padding: 50px 20px 20px;
-    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 100;
-}
-
-.sidebar.open {
-    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar ul {
@@ -23,37 +22,53 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 4px;
 }
 
+/* ── Clickable Area Fix: padding on <a>, not <li> ── */
 .sidebar li {
-    color: #f0fdf4;
     border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.05em;
-    padding: 12px 15px;
-    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 0;
 }
 
 .sidebar-elements li a {
     text-decoration: none;
-    color: inherit;
-    display: block;
+    color: #f0fdf4;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
     width: 100%;
+    box-sizing: border-box;
 }
 
-.sidebar li:hover, .sidebar li.active {
+.sidebar-elements li a:hover,
+.sidebar li.active a {
     background-color: rgba(39, 103, 73, 0.8);
-    transform: translateX(5px);
 }
 
+/* Icons */
+.sidebar-icon {
+    font-size: 1.1rem;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Labels */
+.sidebar-label {
+    white-space: nowrap;
+}
+
+/* ───── Social Link ───── */
 .sidebar-social {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    right: 0;
-    padding: 0 20px;
+    padding: 0 10px 20px;
 }
 
 .social-link {
@@ -75,20 +90,93 @@
 
 .social-icon {
     font-size: 1.3rem;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
 }
 
+/* ═══════════════════════════════════════════
+   Desktop — Icon Rail (above 768px)
+   ═══════════════════════════════════════════ */
+@media (min-width: 769px) {
+    .sidebar {
+        left: 0;
+        width: 60px;
+        height: calc(100vh - var(--header-height));
+        padding: 20px 0 0;
+        overflow: hidden;
+        transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sidebar:hover {
+        width: 240px;
+    }
+
+    /* Hide labels when collapsed, show on hover */
+    .sidebar-label {
+        opacity: 0;
+        transform: translateX(-5px);
+        transition: opacity 0.25s ease 0.05s, transform 0.25s ease 0.05s;
+    }
+
+    .sidebar:hover .sidebar-label {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* Center icons when collapsed */
+    .sidebar-elements li a {
+        padding: 12px 19px;
+    }
+
+    /* Hover translateX only on desktop */
+    .sidebar-elements li a:hover {
+        transform: translateX(3px);
+    }
+
+    .sidebar li.active a {
+        transform: translateX(3px);
+    }
+
+    /* Override — sidebar is ALWAYS visible on desktop */
+    .sidebar.open {
+        width: 240px;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   Tablet — Overlay Slide (481px – 768px)
+   ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
     .sidebar {
-        width: 230px;
-        left: -230px;
-        padding: 40px 15px 15px;
+        left: -250px;
+        width: 250px;
+        height: calc(100vh - var(--header-height));
+        padding: 40px 10px 15px;
+        transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .sidebar li {
-        font-size: 1rem;
+    .sidebar.open {
+        left: 0;
+    }
+
+    .sidebar-label {
+        opacity: 1;
+        transform: none;
+    }
+
+    .sidebar-elements li a:hover {
+        transform: translateX(5px);
+    }
+
+    .sidebar li.active a {
+        transform: translateX(5px);
     }
 }
 
+/* ═══════════════════════════════════════════
+   Phone — Full-Width Dropdown (≤480px)
+   ═══════════════════════════════════════════ */
 @media (max-width: 480px) {
     .sidebar {
         width: 100%;
@@ -97,7 +185,7 @@
         top: var(--header-height);
         transform: translateY(-150%);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        padding: 30px 20px;
+        padding: 20px 15px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
@@ -107,15 +195,25 @@
 
     .sidebar ul {
         align-items: center;
-        gap: 15px;
+        gap: 8px;
     }
 
-    .sidebar li {
-        width: 100%;
-        text-align: center;
+    .sidebar-elements li a {
+        justify-content: center;
+        font-size: 1rem;
     }
 
-    .sidebar li:hover, .sidebar li.active {
+    .sidebar-elements li a:hover,
+    .sidebar li.active a {
         transform: none;
+    }
+
+    .sidebar-social {
+        text-align: center;
+        padding: 10px 15px 15px;
+    }
+
+    .social-link {
+        justify-content: center;
     }
 }

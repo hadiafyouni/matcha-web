@@ -9,12 +9,7 @@ body {
 }
 
 .main-content {
-  transition: filter 0.4s ease;
-}
-
-.main-content.blurred {
-  filter: blur(5px);
-  pointer-events: none;
+  transition: none;
 }
 
 .sidebar-overlay {
@@ -26,4 +21,16 @@ body {
   background: rgba(0, 0, 0, 0.3);
   z-index: 99;
   cursor: pointer;
+}
+
+/* Desktop: offset content for the persistent icon rail */
+@media (min-width: 769px) {
+  .main-content {
+    padding-left: 60px;
+  }
+
+  /* Overlay not needed on desktop since sidebar is always visible */
+  .sidebar-overlay {
+    display: none;
+  }
 }

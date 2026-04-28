@@ -1,9 +1,18 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faXmark, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useCart } from "../../context/CartContext";
 
-export default function Header({ isOpen, handleMenuClick }) {
+interface HeaderProps {
+    isOpen: boolean;
+    handleMenuClick: () => void;
+}
+
+export default function Header({ isOpen, handleMenuClick }: HeaderProps) {
+    const cart = useCart();
+    const itemCount = cart ? cart.cartItems.reduce((sum, item) => sum + item.quantity, 0) : 0;
+
     return (
         <header className="header">
             {/* Aurora glow */}
@@ -33,9 +42,15 @@ export default function Header({ isOpen, handleMenuClick }) {
                     <h1 className="logo">Matcha Horikku</h1>
                 </Link>
 
-                <Link to="/signin" className="signin-buttons">
-                    Sign in
-                </Link>
+                <div className="header-actions">
+                    <Link to="/cart" className="cart-button" aria-label="Shopping cart">
+                        <FontAwesomeIcon icon={faCartShopping} className="cart-icon" />
+                        {itemCount > 0 && <span className="cart-badge">{itemCount}</span>}
+                    </Link>
+                    <Link to="/signin" className="signin-buttons">
+                        Sign in
+                    </Link>
+                </div>
             </nav>
         </header>
     );

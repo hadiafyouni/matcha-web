@@ -1,6 +1,13 @@
-import { Snackbar, Alert } from '@mui/material';
+import { Snackbar, Alert, AlertColor } from '@mui/material';
 
-export default function Toast({ open, onClose, message, severity = "success" }) {
+interface ToastProps {
+    open: boolean;
+    onClose: () => void;
+    message: string;
+    severity?: AlertColor;
+}
+
+export default function Toast({ open, onClose, message, severity = "success" }: ToastProps) {
     return (
         <Snackbar
             open={open}

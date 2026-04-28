@@ -7,7 +7,7 @@ export default function WelcomeSection() {
         <div className="welcome-section">
             <h2>Welcome to MATCHA HORIKKU</h2>
             <p>A place where everything tastes green</p>
-            <PrimaryButton component={Link} to="/menu" sx={{ width: 'auto' }}>
+            <PrimaryButton component={Link} to="/products" sx={{ width: 'auto' }}>
                 Shop Now
             </PrimaryButton>
         </div>
