@@ -9,7 +9,7 @@ import ProductDetail from "../ProductDetail/ProductDetail";
 import OurStory from "../OurStory/OurStory";
 import Events from "../Events/Events";
 import Cart from "../Cart/Cart";
-import SignIn from "../SignIn/SignIn";
+import SignIn from "../Auth/SignIn";
 import Footer from "../Footer/Footer";
 import { CartProvider } from "../context/CartContext";
 import ScrollToTop from "../components/ScrollToTop";

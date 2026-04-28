@@ -3,6 +3,7 @@ import WelcomeSection from "./WelcomeSection/WelcomeSection";
 import GeneralInfo from "./Generalinfo/GeneralInfo";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { accessoriesItems } from "../products";
+import TargetedAudience from "./TargetedAudience/TargetedAudience";
 
 
 export default function Home() {
@@ -27,8 +28,7 @@ export default function Home() {
                     ))}
                 </div>
             </div>
-
-
+            <TargetedAudience />
         </div>
     )
 }

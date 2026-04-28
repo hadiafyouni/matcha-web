@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { EventData } from '../data/events';
+import { EventData } from '../events';
 import BookingModal from '../components/BookingModal/BookingModal';
 
 interface EventCardProps {

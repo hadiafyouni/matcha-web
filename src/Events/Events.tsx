@@ -1,5 +1,5 @@
 import './Events.css';
-import { events } from '../data/events';
+import { events } from '../events';
 import EventCard from './EventCard';
 
 export default function Events() {
