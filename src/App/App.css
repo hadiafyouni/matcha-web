@@ -24,7 +24,7 @@ body {
 }
 
 /* Desktop: offset content for the persistent icon rail */
-@media (min-width: 769px) {
+@media (min-width: 1026px) {
   .main-content {
     padding-left: 60px;
   }

@@ -1,7 +1,6 @@
 import "./Home.css";
 import WelcomeSection from "./WelcomeSection/WelcomeSection";
 import GeneralInfo from "./Generalinfo/GeneralInfo";
-import ShopByMood from "./ShopByMood/ShopByMood";
 import ProductCard from "../components/ProductCard/ProductCard";
 import { accessoriesItems } from "../products";
 
@@ -29,7 +28,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <ShopByMood />
+
         </div>
     )
 }

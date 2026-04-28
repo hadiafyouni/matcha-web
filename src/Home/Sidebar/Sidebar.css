@@ -96,9 +96,9 @@
 }
 
 /* ═══════════════════════════════════════════
-   Desktop — Icon Rail (above 768px)
+   Desktop — Icon Rail (above 1025px)
    ═══════════════════════════════════════════ */
-@media (min-width: 769px) {
+@media (min-width: 1026px) {
     .sidebar {
         left: 0;
         width: 60px;
@@ -147,7 +147,7 @@
 /* ═══════════════════════════════════════════
    Tablet — Overlay Slide (481px – 768px)
    ═══════════════════════════════════════════ */
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
     .sidebar {
         left: -250px;
         width: 250px;
