@@ -46,17 +46,19 @@ export default function SignIn() {
                         fullWidth
                         required
                         sx={textFieldSx}
-                        InputProps={{
-                            endAdornment: (
-                                <InputAdornment position="end">
-                                    <IconButton onClick={() => setShowPassword(prev => !prev)} edge="end">
-                                        <FontAwesomeIcon
-                                            icon={showPassword ? faEyeSlash : faEye}
-                                            className="text-sm text-slate-600"
-                                        />
-                                    </IconButton>
-                                </InputAdornment>
-                            )
+                        slotProps={{
+                            input: {
+                                endAdornment: (
+                                    <InputAdornment position="end">
+                                        <IconButton onClick={() => setShowPassword(prev => !prev)} edge="end">
+                                            <FontAwesomeIcon
+                                                icon={showPassword ? faEyeSlash : faEye}
+                                                className="text-sm text-slate-600"
+                                            />
+                                        </IconButton>
+                                    </InputAdornment>
+                                )
+                            }
                         }}
                     />
 
